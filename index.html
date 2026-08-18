@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Impianti | Elettricista a Monza</title>
+<meta name="description" content="JC Impianti - impianti elettrici, quadri, pronto intervento e manutenzione a Monza e provincia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent: #cc3333;
+    --accent-light: #e85757;
+    --bg0:#08080a;
+    --bg1:#141416;
+    --ink:#f4f4f5;
+    --muted:#a6a6ac;
+    --muted2:#7c7c82;
+    --line: rgba(255,255,255,0.10);
+    --glass: linear-gradient(160deg, rgba(255,255,255,0.055), rgba(255,255,255,0.015));
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins','Inter',system-ui,-apple-system,sans-serif;
+    background:
+      radial-gradient(ellipse 1200px 800px at 15% -10%, rgba(200,38,42,0.16) 0%, transparent 55%),
+      radial-gradient(ellipse 1000px 700px at 100% 10%, color-mix(in srgb, var(--accent) 18%, transparent) 0%, transparent 55%),
+      radial-gradient(ellipse at bottom, var(--bg1) 0%, var(--bg0) 60%, #000 100%);
+    background-color:var(--bg0);
+    color:var(--ink);
+    overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(14px);
+    background:rgba(8,8,10,0.72);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1180px; margin:0 auto;}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; font-size:17px; letter-spacing:0.3px;}
+  .brand .dot{width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 14px 3px color-mix(in srgb, var(--accent) 70%, transparent);}
+  .navlinks{display:flex; gap:34px; font-size:14px; color:var(--muted);}
+  .navlinks a:hover{color:#fff;}
+  .cta-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--accent); color:#fff; font-weight:600; font-size:13.5px;
+    padding:11px 20px; border-radius:100px; letter-spacing:0.2px;
+    box-shadow:0 10px 30px -10px color-mix(in srgb, var(--accent) 70%, transparent);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .cta-btn:hover{transform:translateY(-2px); box-shadow:0 16px 36px -10px color-mix(in srgb, var(--accent) 80%, transparent);}
+  @media (max-width:820px){ .navlinks{display:none;} }
+
+  /* HERO */
+  .hero{padding:88px 0 60px; position:relative;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;}
+  @media (max-width:960px){ .hero-grid{grid-template-columns:1fr; gap:44px;} }
+  .badge{
+    display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--accent-light); border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    background:color-mix(in srgb, var(--accent) 12%, transparent);
+    padding:8px 16px; border-radius:100px; margin-bottom:26px;
+  }
+  h1{font-size:clamp(34px,4.6vw,56px); font-weight:700; line-height:1.12; letter-spacing:-0.5px;}
+  h1 span{color:var(--accent-light);}
+  .hero p.lead{margin-top:22px; font-size:17px; line-height:1.7; color:var(--muted); max-width:480px;}
+  .hero-ctas{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .btn-ghost{
+    display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:13.5px;
+    padding:11px 22px; border-radius:100px; border:1px solid var(--line); color:#fff;
+    background:rgba(255,255,255,0.03);
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .btn-ghost:hover{border-color:color-mix(in srgb, var(--accent) 60%, transparent); background:rgba(255,255,255,0.06);}
+  .trust-row{display:flex; gap:28px; margin-top:46px; flex-wrap:wrap;}
+  .trust-row div{font-size:12.5px; color:var(--muted2); display:flex; align-items:center; gap:8px;}
+  .trust-row strong{color:#fff; font-weight:600;}
+
+  /* COLLAGE */
+  .collage{position:relative; height:460px;}
+  .collage img{
+    position:absolute; border-radius:18px; object-fit:cover;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 30px 70px -20px rgba(0,0,0,0.65);
+  }
+  .collage .c1{width:62%; height:66%; top:0; left:0; z-index:2;}
+  .collage .c2{width:52%; height:48%; bottom:0; right:0; z-index:3; transform:rotate(2deg);}
+  .collage .c3{width:38%; height:34%; top:8%; right:6%; z-index:1; transform:rotate(-4deg);}
+  .collage .badge-float{
+    position:absolute; bottom:26px; left:18px; z-index:4;
+    background:rgba(10,10,12,0.82); backdrop-filter:blur(10px);
+    border:1px solid var(--line); border-radius:14px; padding:14px 18px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .collage .badge-float .num{font-size:22px; font-weight:800; color:var(--accent-light);}
+  .collage .badge-float .lbl{font-size:11px; color:var(--muted); line-height:1.3; max-width:120px;}
+  @media (max-width:960px){ .collage{height:340px;} }
+
+  /* SECTION HEADS */
+  .section{padding:90px 0;}
+  .section-head{max-width:600px; margin:0 auto 54px; text-align:center;}
+  .eyebrow{font-size:11.5px; letter-spacing:3px; text-transform:uppercase; color:var(--accent-light); font-weight:600; margin-bottom:14px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,38px); font-weight:700; letter-spacing:-0.3px;}
+  .section-head p{margin-top:14px; color:var(--muted); font-size:15px; line-height:1.7;}
+
+  /* SERVICES */
+  .grid6{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:860px){ .grid6{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .grid6{grid-template-columns:1fr;} }
+  .card{
+    background:var(--glass); border:1px solid var(--line); border-radius:18px; padding:30px 26px;
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .card:hover{transform:translateY(-6px); border-color:color-mix(in srgb, var(--accent) 55%, transparent); box-shadow:0 26px 60px -24px color-mix(in srgb, var(--accent) 45%, transparent);}
+  .card .icon{
+    width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    background:color-mix(in srgb, var(--accent) 16%, transparent); border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    margin-bottom:18px; font-size:20px;
+  }
+  .card h3{font-size:16.5px; font-weight:600; margin-bottom:9px;}
+  .card p{font-size:13.5px; color:var(--muted); line-height:1.65;}
+
+  /* STATS */
+  .stats-wrap{
+    background:var(--glass); border:1px solid var(--line); border-radius:22px;
+    display:grid; grid-template-columns:repeat(4,1fr); padding:42px 20px;
+  }
+  @media (max-width:760px){ .stats-wrap{grid-template-columns:repeat(2,1fr); row-gap:34px;} }
+  .stat{text-align:center; border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  @media (max-width:760px){ .stat:nth-child(2n){border-right:none;} }
+  .stat .n{font-size:clamp(26px,3vw,34px); font-weight:800; color:var(--accent-light);}
+  .stat .l{font-size:12px; color:var(--muted); margin-top:6px; letter-spacing:0.3px;}
+
+  /* GALLERY */
+  .gallery{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  @media (max-width:860px){ .gallery{grid-template-columns:repeat(2,1fr);} }
+  .gallery img{width:100%; height:220px; object-fit:cover; border-radius:14px; border:1px solid var(--line); transition:transform .4s ease;}
+  .gallery img:hover{transform:scale(1.035);}
+  .gallery .tall{height:462px; grid-row:span 2;}
+  @media (max-width:860px){ .gallery .tall{height:220px; grid-row:span 1;} }
+
+  /* TESTIMONIAL */
+  .testi{
+    max-width:760px; margin:0 auto; text-align:center;
+    background:var(--glass); border:1px solid var(--line); border-radius:22px; padding:52px 40px;
+  }
+  .testi .stars{color:var(--accent-light); font-size:18px; letter-spacing:4px; margin-bottom:20px;}
+  .testi p{font-size:19px; line-height:1.7; font-weight:300; color:#eee;}
+  .testi .who{margin-top:26px; font-size:13.5px; color:var(--muted); font-weight:600;}
+
+  /* CONTACT */
+  .contact-box{
+    background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 22%, transparent), rgba(255,255,255,0.02));
+    border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    border-radius:26px; padding:56px 48px; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;
+  }
+  .contact-box h2{font-size:clamp(24px,3vw,32px); font-weight:700; max-width:440px; line-height:1.25;}
+  .contact-box p{color:var(--muted); margin-top:12px; font-size:14.5px; max-width:420px;}
+  .contact-actions{display:flex; gap:14px; flex-wrap:wrap;}
+
+  footer{border-top:1px solid var(--line); padding:36px 0 46px; text-align:center;}
+  footer p{font-size:12px; color:var(--muted2); letter-spacing:0.4px;}
+  footer .tag{margin-top:6px; font-size:11px; color:#55555c; letter-spacing:2px; text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand"><span class="dot"></span>JC Impianti</div>
+    <div class="navlinks">
+      <a href="#servizi">Servizi</a>
+      <a href="#lavori">Lavori</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+    <a class="cta-btn" href="tel:+393294618881">📞 329 461 8881</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge">⚡ Elettricista a Monza</div>
+      <h1>Impianti elettrici <span>sicuri e a norma</span>, senza sorprese</h1>
+      <p class="lead">JC Impianti segue privati e aziende a Monza e provincia: impianti civili e industriali, quadri elettrici, manutenzione e pronto intervento, con preventivo chiaro prima di iniziare.</p>
+      <div class="hero-ctas">
+        <a class="cta-btn" href="tel:+393294618881">Chiama ora</a>
+        <a class="btn-ghost" href="https://wa.me/393294618881" target="_blank" rel="noopener">Scrivi su WhatsApp</a>
+      </div>
+      <div class="trust-row">
+        <div>✅ <strong>Preventivo</strong>&nbsp;gratuito</div>
+        <div>🛡️ <strong>Lavori</strong>&nbsp;a norma CEI</div>
+        <div>⏱️ <strong>Pronto</strong>&nbsp;intervento</div>
+      </div>
+    </div>
+    <div class="collage">
+      <img class="c1" src="https://images.unsplash.com/photo-_l7NuMJEf7g?auto=format&fit=crop&w=1200&q=75" alt="Intervento elettrico JC Impianti">
+      <img class="c2" src="https://images.unsplash.com/photo-5Nqj8VKfDko?auto=format&fit=crop&w=1200&q=75" alt="Quadro elettrico">
+      <img class="c3" src="https://images.unsplash.com/photo-j8izcqnV88w?auto=format&fit=crop&w=1200&q=75" alt="Dettaglio impianto">
+      <div class="badge-float">
+        <div class="num">+13</div>
+        <div class="lbl">anni di esperienza sul campo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="servizi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cosa facciamo</div>
+      <h2>Un servizio elettrico completo</h2>
+      <p>Dalla piccola riparazione all'impianto industriale, JC Impianti gestisce ogni fase del lavoro con la stessa cura.</p>
+    </div>
+    <div class="grid6">
+      <div class="card"><div class="icon">🏠</div><h3>Impianti civili</h3><p>Nuove costruzioni, ristrutturazioni e adeguamenti normativi per abitazioni e condomini.</p></div>
+      <div class="card"><div class="icon">🏭</div><h3>Impianti industriali</h3><p>Quadri di potenza, linee dedicate e manutenzione programmata per attività e cantieri.</p></div>
+      <div class="card"><div class="icon">⚡</div><h3>Quadri elettrici</h3><p>Progettazione, realizzazione e certificazione di quadri elettrici a norma CEI.</p></div>
+      <div class="card"><div class="icon">🚨</div><h3>Pronto intervento</h3><p>Guasti, blackout e emergenze: interveniamo rapidamente su tutta la zona di Monza.</p></div>
+      <div class="card"><div class="icon">🏡</div><h3>Domotica</h3><p>Automazione luci, tapparelle e climatizzazione per case e uffici più efficienti.</p></div>
+      <div class="card"><div class="icon">☀️</div><h3>Fotovoltaico</h3><p>Impianti fotovoltaici e sistemi di accumulo, dal sopralluogo alla messa in funzione.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stats-wrap">
+      <div class="stat"><div class="n">+13</div><div class="l">ANNI DI ESPERIENZA</div></div>
+      <div class="stat"><div class="n">670+</div><div class="l">INTERVENTI COMPLETATI</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">LAVORI A NORMA CEI</div></div>
+      <div class="stat"><div class="n">24/7</div><div class="l">REPERIBILITÀ EMERGENZE</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lavori">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lavori recenti</div>
+      <h2>Alcuni interventi a Monza</h2>
+    </div>
+    <div class="gallery">
+      <img class="tall" src="https://images.unsplash.com/photo-GXLPLG3_Vf4?auto=format&fit=crop&w=1200&q=75" alt="Lavoro elettrico 1">
+      <img src="https://images.unsplash.com/photo-Q3WVbAfdOoY?auto=format&fit=crop&w=1200&q=75" alt="Lavoro elettrico 2">
+      <img src="https://images.unsplash.com/photo-LMb98OOtoYU?auto=format&fit=crop&w=1200&q=75" alt="Lavoro elettrico 3">
+      <img class="tall" src="https://images.unsplash.com/photo-ZGY5Pp8Xxaw?auto=format&fit=crop&w=1200&q=75" alt="Lavoro elettrico 4">
+      <img src="https://images.unsplash.com/photo-5Nqj8VKfDko?auto=format&fit=crop&w=1200&q=75" alt="Lavoro elettrico 5">
+      <img src="https://images.unsplash.com/photo-_l7NuMJEf7g?auto=format&fit=crop&w=1200&q=75" alt="Lavoro elettrico 6">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"Intervento rapido e spiegazione chiara di tutto quello che serviva. Lavoro pulito e nessuna sorpresa in fattura."</p>
+      <div class="who">Cliente Monza</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contatti">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <h2>Parliamo del tuo impianto</h2>
+        <p>Racconta il problema o il progetto: rispondiamo con un preventivo chiaro, senza impegno.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="cta-btn" href="tel:+393294618881">📞 329 461 8881</a>
+        <a class="btn-ghost" href="https://wa.me/393294618881" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>JC Impianti · Elettricista a Monza e provincia</p>
+  <div class="tag">Bozza sito · Realizzato da Umbra Agency</div>
+</footer>
+
+</body>
+</html>
